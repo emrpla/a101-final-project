@@ -4,6 +4,8 @@ import Base.Driver;
 import Pages.HomePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
@@ -34,13 +36,23 @@ public class RegisteredUserBasket {
         homePage.verifyUserLogin();
     }
 
-    @And("user search a spesific product")
-    public void userSearchASpesificProduct() {
+    @And("user search a specific product")
+    public void userSearchASpecificProduct() {
         homePage.searchAProduct();
     }
 
     @And("user add two product from two different seller")
     public void userAddTwoProductFromTwoDifferentSeller() throws InterruptedException {
         homePage.addToCart();
+    }
+
+    @When("user clicks on my basket button")
+    public void userClicksOnMyBasketButton() {
+        homePage.goToBasket();
+    }
+
+    @Then("verify that two products added to the user's basket")
+    public void verifyThatTwoProductsAddedToTheUserSBasket() {
+        homePage.verifyProducts();
     }
 }

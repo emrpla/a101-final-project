@@ -57,9 +57,6 @@ public class HomePage extends BaseTest {
 
     @FindBy(xpath = "/html/body/div/div/div/div[3]/div[5]/div/div/div/div/div[2]/div[2]/div/div/div/div/div/div/div[1]/div[2]/input")
     private WebElement searchBar;
-    //*[@id="SearchBoxOld_37a764ae-09ed-4adb-e176-18b62a06d8a3"]/div/div/div[1]/div[2]/input
-    //*[@id="SearchBoxOld_37a764ae-09ed-4adb-e176-18b62a06d8a3"]/div/div/div[1]/div[2]/input
-    //*[@id="SearchBoxOld_37a764ae-09ed-4adb-e176-18b62a06d8a3"]/div/div/div[1]/div[2]/input
     @FindBy(xpath = "/html/body/div/div/div/div[3]/div[5]/div/div/div/div/div[2]/div[2]/div/div/div/div/div/div/div[2]]")
     private WebElement searchButton;
     public void searchAProduct(){
@@ -91,5 +88,18 @@ public class HomePage extends BaseTest {
         Thread.sleep(8000);
         click(cancelButton);
 
+    }
+
+    @FindBy(xpath = "//*[@id=\"oldHeader_fc033431-df58-48a5-96a3-ccdf85795f79\"]/div/div/div[2]/div[3]/a")
+    private WebElement basketButton;
+    public void goToBasket(){
+        click(basketButton);
+    }
+
+    @FindBy(id = "basket-item-count")
+    private WebElement productCount;
+    public void verifyProducts(){
+        int expectedProductCount = 2;
+        Assert.assertEquals(productCount,expectedProductCount,"You don't have two products on your basket");
     }
 }
