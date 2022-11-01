@@ -1,7 +1,9 @@
 package Steps;
 
 import Base.Driver;
+import Pages.BasketPage;
 import Pages.HomePage;
+import Pages.ProductPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,12 +11,13 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class RegisteredUserBasket {
     private WebDriver driver;
 
     HomePage homePage = new HomePage();
+    ProductPage productPage = new ProductPage();
+    BasketPage basketPage = new BasketPage();
 
     @Given("a web browser is at the hepsiburada home page")
     public void a_web_browser_is_at_the_hepsiburada_home_page(){
@@ -43,16 +46,16 @@ public class RegisteredUserBasket {
 
     @And("user add two product from two different seller")
     public void userAddTwoProductFromTwoDifferentSeller() throws InterruptedException {
-        homePage.addToCart();
+        productPage.addToCart();
     }
 
     @When("user clicks on my basket button")
     public void userClicksOnMyBasketButton() {
-        homePage.goToBasket();
+        productPage.goToBasket();
     }
 
     @Then("verify that two products added to the user's basket")
     public void verifyThatTwoProductsAddedToTheUserSBasket() {
-        homePage.verifyProducts();
+        basketPage.verifyProducts();
     }
 }

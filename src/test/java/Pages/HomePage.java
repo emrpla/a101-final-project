@@ -10,8 +10,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomePage extends BaseTest {
 
@@ -61,45 +59,7 @@ public class HomePage extends BaseTest {
     private WebElement searchButton;
     public void searchAProduct(){
         Actions actions = new Actions(driver);
-        actions.click(searchBar).sendKeys("Kalem").sendKeys(Keys.ENTER).perform();
+        actions.click(searchBar).sendKeys("Nutella").sendKeys(Keys.ENTER).perform();
     }
 
-    @FindBy(xpath = "//*[@id=\"i0\"]/div")
-    private WebElement pencilProduct;
-    @FindBy(id = "addToCart")
-    private WebElement addToCartMainSeller;
-    @FindBy(xpath = "/html/body/div[7]/div/div/div/div/div/div/h1/a")
-    private WebElement cancelButton;
-    @FindBy(xpath = "/html/body/div[2]/main/div[3]/section[1]/div[4]/div/div[4]/div[2]/div[3]/div/div[2]/table/tbody/tr[1]/td[3]/div")
-    private WebElement assToCardDifferentSeller;
-
-    @FindBy(id = "onetrust-accept-btn-handler")
-    private WebElement cookie;
-    public void addToCart() throws InterruptedException {
-        click(pencilProduct);
-        List<String> tabs = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(1)); // Go to pencil detail tab
-
-        click(addToCartMainSeller);
-        Thread.sleep(8000);
-        click(cancelButton);
-        click(cookie);
-        click(assToCardDifferentSeller);
-        Thread.sleep(8000);
-        click(cancelButton);
-
-    }
-
-    @FindBy(xpath = "//*[@id=\"oldHeader_fc033431-df58-48a5-96a3-ccdf85795f79\"]/div/div/div[2]/div[3]/a")
-    private WebElement basketButton;
-    public void goToBasket(){
-        click(basketButton);
-    }
-
-    @FindBy(id = "basket-item-count")
-    private WebElement productCount;
-    public void verifyProducts(){
-        int expectedProductCount = 2;
-        Assert.assertEquals(productCount,expectedProductCount,"You don't have two products on your basket");
-    }
 }

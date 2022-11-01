@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = {"src/test/java/Features"},
+        features = {"src/test/java/Features/AddProductToBasketWithUser.feature","src/test/java/Features/AddProductToBasketWithAnonymousUser.feature"},
         glue = {"Steps"},
         dryRun = false
 )

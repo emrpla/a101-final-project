@@ -1,5 +1,5 @@
-Feature: Add a product to the basket with registered user
-  Scenario: A registered user add two product to his basket
+Feature: Simple shopping example without purchase
+  Scenario: Add two same product with different seller to the basket with registered user
 
     Given a web browser is at the hepsiburada home page
     And user login to the site
@@ -8,4 +8,3 @@ Feature: Add a product to the basket with registered user
     And user add two product from two different seller
     When user clicks on my basket button
     Then verify that two products added to the user's basket
-
