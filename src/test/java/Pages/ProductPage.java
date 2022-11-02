@@ -25,8 +25,7 @@ public class ProductPage extends BaseTest {
     private WebElement pencilProduct;
     @FindBy(id = "addToCart")
     private WebElement addToCartMainSeller;
-    //@FindBy(xpath = "/html/body/div[7]/div/div/div/div/div/div/h1/a")
-    @FindBy(css = "a[class=\"checkoutui-Modal-2iZXl\"]")
+    @FindBy(css = "a[class=\"checkoutui-Modal-iHhyy79iR28NvF33vKJb\"]")
     private WebElement cancelButton;
 
     @FindBy(xpath = "/html/body/div[2]/main/div[3]/section[1]/div[3]/div/div[4]/div[2]/div[3]/div/div[2]/table/tbody/tr[1]/td[3]/div/form/button")
@@ -46,7 +45,7 @@ public class ProductPage extends BaseTest {
 
             click(addToCartMainSeller);
             Thread.sleep(8000);
-            click(cancelButton);
+                click(cancelButton);
             JavascriptExecutor j = (JavascriptExecutor) driver;
             j.executeScript("window.scrollBy(0,250)");
 
@@ -78,9 +77,6 @@ public class ProductPage extends BaseTest {
             f.executeScript("window.scrollBy(0,-250)");
 
         }
-
-        //click(cookie);
-
 
     }
 

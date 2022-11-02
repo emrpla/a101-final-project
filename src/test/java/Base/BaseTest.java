@@ -1,5 +1,6 @@
 package Base;
 
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
-
+@ExtendWith(TestResultLogger.class)
 public class BaseTest {
 
     private WebDriver driver = Driver.getDriver();
