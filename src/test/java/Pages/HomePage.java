@@ -40,13 +40,13 @@ public class HomePage extends BaseTest {
         click(loginText);
 
         click(facebookLoginButton);
-        sendKeys(emailInput,"emrpla12@gmail.com");
-        sendKeys(passwordInput,"supernatural4");
+        sendKeys(emailInput,"*****@gmail.com");
+        sendKeys(passwordInput,"**********");
         click(finalLoginButton);
 
     }
 
-    @FindBy(xpath = "//*[@id=\"myAccount\"]/span/a/span[2]")
+    @FindBy(css = "span[class=\"sf-OldMyAccount-sS_G2sunmDtZl9Tld5PR\"]")
     private WebElement usernameverify;
     public void verifyUserLogin(){
         String expectedResult = "Emre Pala";
